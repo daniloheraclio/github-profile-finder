@@ -32,6 +32,33 @@ class UI {
     <div id="repos"></div>
     `;
   };
+
+  // Display Repos in UI
+  showRepos(repos) {
+    let output = '';
+
+    repos.forEach(repo => {
+      output += `
+      <div class="card card-body mb-2">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            <p>Description: ${repo.description}</p>
+          </div>
+          <div class="col-md-9">
+            <span class="badge badge-primary">Stars: ${repo.stargazers_count}</span>
+            <span class="badge badge-secondary">Watchers: ${repo.watchers}</span>
+            <span class="badge badge-success">Followers: ${repo.forks}</span>
+          </div>
+        </div>
+      </div>
+      `;
+    })
+    //Output repository
+    const reposDiv = document.getElementById('repos');
+    reposDiv.innerHTML = output;
+  }
+
   // ----------- Clear Profile ----------- 
   clearProfile() {
     this.profile.innerHTML = '';
@@ -63,7 +90,7 @@ class UI {
     //Timeout after 3 sec
     setTimeout(() => {
       this.clearAlert();
-    },3000)
+    },2000)
   }
 
   // ----------- Clear alert message ----------- 
