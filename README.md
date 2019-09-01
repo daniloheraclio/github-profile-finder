@@ -2,6 +2,8 @@
 
 Simple project made with pure javascript which fetch user from github and output details from this user and his last 5 repos.
 
+![](https://github.com/daniloheraclio/github-profile-finder/blob/master/github_finder_demo.gif)
+
 Used in this project:
 ES6 Arrow functions
 ES classes
